@@ -1,0 +1,19 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+.banner{
+    width:100%;
+    background-image:url("content/images/images.jpeg");
+    background-size:cover;
+    min-height:400px;
+    float:right;
+}
+
+.bannerContent{
+    float:right;
+    margin-right:50px;
+    margin-top:20px;
+    max-height:550px;
+}
