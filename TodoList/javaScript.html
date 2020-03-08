@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <title>My todo list for javaScript</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    </head>
+    <body>
+        <section id="newTask" class="container">
+            <div class="jumbotron">
+                <h1 class="display-3 lead">My Task List Table</h1>
+                <p class="lead">Please Input Your Data Below.</p>
+                <hr class="my-3">
+            </div>
+            <div class="row">
+                <h1 class="col-12">My Todo list User Field</h1>
+            </div>
+            <forms>
+                <!-- input task for accepting value for our task -->
+                <input id="taskTitle" type="text" placeholder="Task Title" class="form-control "> 
+                <br>
+                <!-- input task for accepting valur for our task -->
+                <textarea id="taskDescription" class="form-control" placeholder="Task Description" rows="4"></textarea><br>
+                <!-- input button for creating task for our element -->
+                <input id="createTask" type="button" value="Creat New Task" class="btn btn-primary my-3">
+            </forms>
+        </section>
+        <section id="viewTasks" class="container">
+            <div class="row">
+                <table class="table table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Description</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>head </td>
+                            <td>body of the needed element</td>
+                            <td>footer</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- this my research on javaScript date methods  -->
+            <input id="jav" type="button" value="check date" class="btn btn-primary my-3">
+            <p id="sol">Sun Mar 08 2020 00:40:57 GMT+0100 (West Africa Standard Time)</p> 
+            
+
+        </section>
+
+
+
+
+
+        <script src="js/jquery3.3.1.min.js"></script>
+        <script src="js/bootstrap4.bundle.min.js"></script>
+        <script src="js/main.js"></script>
+    
+</body></html>
