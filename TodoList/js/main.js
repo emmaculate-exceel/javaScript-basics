@@ -3,65 +3,90 @@ let tasks = [];
 //task functions
 let taskStatus=["completed", "unCompleted", "inProgress"];
 
-document.getElementById("createTask").addEventListener("click", function(){
-    let title = document.getElementById("taskTitle").value;
-    let description = document.getElementById("taskDescription").value;
+let createTaskButton = document.getElementById("createTask");
+
+//disabled button
+//createTaskButton.setAttribute("disable", "disabled");
+
+ //take the input value of the text box and textarea
+//let taskTitle = document.getElementById("taskTitle").value;
+//let taskDescription = document.getElementById("taskDescription").value;
+
+//this code runs when the form is submitted
+document.getElementsByTagName("form")[0].addEventListener("submit",function(e){
+    // prevent the default form action
+    e.preventDefault();
+
+    //if the input field doesn't contain a text value do not take us to the next page
+    if(isEmpty(taskTitle) && isEmpty(taskDescription)){
+        let title = document.getElementById("taskTitle").value;
+        let description = document.getElementById("taskDescription").value; 
+        createTask(title, description);
+
+        //declare a variable and initialize it to a new task
+        let table = document.getElementById("newTask");
+        hideHtmlElement(table);
+        // hide an html section 
+        let sectionElement = document.getElementById("viewTasks");
+        showHtmlElement(sectionElement); 
     
-  createTask(title, description);
-// declare a variable and initialize it to an element.
+    }
+    else{
+        // else send the user a pop up message 
+        alert("please enter an input value!!");
+
+    });
+
+        //find out if an input is field is empty
+function isEmpty(input){
+        if(input.value > 0){
+            return true;
+        }
+        else{
+            //input field is empty
+            return false;
+        }
+};
 
 
-    let sectionElement = document.getElementById("newTask");
-// hide an element.
-    hideHtmlElement(sectionElement);
-
-    console.log(tasks);
+document.getElementById("btnNewTask").addEventListener("click", function (){
+    let sectionElement = document.getElementById("viewTasks");
+    // hide an element.
+        hideHtmlElement(sectionElement);
+    
+        let table = document.getElementById("newTask");
+        showHtmlElement(table);
 });
-
-
-    let variable1 =  "a";
-    let variable2 = variable1;
-    console.log(variable1);
-    console.log(variable2);
-
-
-
-
-
-
-
-
 
 
 function createTask(taskTitle, taskDescription){
     let task = {
         title: taskTitle, 
-        description: taskDescription ,
+        description: taskDescription,
         status:taskStatus[1]
 
-    }
+    };
 //add new task to the global tasks array to be saved
      tasks.push(task);
-}
+};
 
-// this function is created to add a function to a section on the page 
+// this function is created to add a bootstrap function to a section on the page 
 function hideHtmlElement(element){
-// this is to add a boostrap class name to perform a certain action .
+// this is to add a boostrap class name to perform a hide function.
     element.classList.add("d-none");
+};
 
-}
+// function to remove the hide function
+function showHtmlElement(element){
+    element.classList.remove("d-none");
+};
 
-// the date object in use 
+// my arrays examples in javascript research
+var come = ["check", "see", "hold"];
+     check = come.slice(2);
+     console.log(check);
 
- //var me = new Date();
-//console.log(me.getDay());
-
-
-// creating a date application on the click of a button in to a p tag
- document.getElementById("jav").addEventListener("click", function(){
-     let calTime = Date();
-     let d = document.getElementById("sol").innerHTML = calTime;
-
-    console.log(calTime);
-
- })
+     // tenary operator
+    var age = 15;
+    var voteable = (age > 18 ) ? "too young":"old enough";
+    console.log(voteable);

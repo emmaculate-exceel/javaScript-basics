@@ -1,0 +1,7 @@
+body{
+    background-color:rgb(240, 242, 243);
+}
+.jumbotron{
+    background-color:rgb(240, 242, 243);
+}
+/* to change my inputs to red on the event of focus */

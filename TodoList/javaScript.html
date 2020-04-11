@@ -4,36 +4,46 @@
         
         <title>My todo list for javaScript</title>
         <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="">
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/todo.css">
     </head>
     <body>
-        <section id="newTask" class="container">
-            <div class="jumbotron">
-                <h1 class="display-3 lead">My Task List Table</h1>
+        <section id="newTask" class="container mt-4">
+            <!-- <div class="jumbotron">
+                <h1 class="display-3 lead">My Task List</h1>
                 <p class="lead">Please Input Your Data Below.</p>
                 <hr class="my-3">
-            </div>
+            </div> -->
             <div class="row">
-                <h1 class="col-12">My Todo list User Field</h1>
+                <h1 class="col-12">New Task</h1>
+           
+                <form class="w-100">
+                    <div class="form-group col-md-6">
+                        <!-- input task for accepting value for our task -->
+                        <input id="taskTitle" type="text" placeholder="Task Title" class="form-control "> 
+                    </div>
+                    <div class="form-group col-md-6">
+                        <!-- input task for accepting valur for our task -->
+                        <textarea id="taskDescription" class="form-control" placeholder="Task Description" rows="4"></textarea>
+                    </div>
+                    <!-- input button for creating task for our element -->
+                    <input id="createTask" type="submit" value="Create Task" class="btn btn-primary my-3 ml-3">
+                </form>
             </div>
-            <forms>
-                <!-- input task for accepting value for our task -->
-                <input id="taskTitle" type="text" placeholder="Task Title" class="form-control "> 
-                <br>
-                <!-- input task for accepting valur for our task -->
-                <textarea id="taskDescription" class="form-control" placeholder="Task Description" rows="4"></textarea><br>
-                <!-- input button for creating task for our element -->
-                <input id="createTask" type="button" value="Creat New Task" class="btn btn-primary my-3">
-            </forms>
         </section>
-        <section id="viewTasks" class="container">
+        <section id="viewTasks" class="container d-none mt-4 ">
             <div class="row">
-                <table class="table table-hover table-bordered">
+                <h1 class="col-6">My Tasks</h1>
+                <span class="col-6 text-right pr-0">
+                    <button id="btnNewTask" class="btn btn-primary ">New Task</button>
+                </span>
+
+                <table class="table table-hover table-bordered bg-light">
                     <thead>
                         <tr>
                             <th>Title</th>
                             <th>Description</th>
+                            <th>Date Created</th>
                             <th>Status</th>
                         </tr>
                     </thead>
@@ -42,13 +52,15 @@
                             <td>head </td>
                             <td>body of the needed element</td>
                             <td>footer</td>
+                            <td>Date</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
             <!-- this my research on javaScript date methods  -->
-            <input id="jav" type="button" value="check date" class="btn btn-primary my-3">
-            <p id="sol">Sun Mar 08 2020 00:40:57 GMT+0100 (West Africa Standard Time)</p> 
+                <!-- DATE BUTTON -->
+            <!-- <input id="jav" type="button" value="check date" class="btn btn-primary my-3">
+            <p id="sol">Display current time and Date.</p> -->
             
 
         </section>
